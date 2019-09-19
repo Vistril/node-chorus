@@ -16,10 +16,18 @@ class ChorusAPI {
         let url = this.API.URL;
         url += this.API.SEARCH + 'query=' + type + '=' + query;
         request.get(url, (err, req, body) => {
+            let data = JSON.parse(body);
             if (err) throw err;
             for (let i = 0; i < resultCount - 1; i++) {
                 results[resultCount] = {
-                    songName: body.songs[resultCount].name
+                    songName: data.songs[resultCount].name,
+                    songArtist: data.songs[resultCount].artist,
+                    songCharter: data.songs[resultCount].charter,
+                    songYear: data.songs[resultCount].year,
+                    songLengths: {
+                        length: data.songs[resultCount].length,
+                        effectiveLength: data.songs[resultCount].effectiveLength
+                    }
                 }
             }
         });
