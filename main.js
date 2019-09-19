@@ -11,7 +11,7 @@ class ChorusAPI {
     search(type, query, resultCount) {
         let results = {};
         let url = this.URL;
-        url += this.search + 'query=' + type + '=' + searchQuery;
+        url += this.search + 'query=' + type + '=' + query;
         request.get(url, (err, req, body) => {
           for (let i = 0; i < resultCount; i++) {
               results[resultCount] = {
