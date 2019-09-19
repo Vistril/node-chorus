@@ -1,0 +1,4 @@
+
+class Search extends ChorusAPI {
+
+}
