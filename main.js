@@ -14,7 +14,7 @@ class ChorusAPI {
     search(type, query, resultCount) {
         if (isNaN(resultCount)) throw new Error('You must input your resultCount as an integer');
         let results = {};
-        let url = this.URL;
+        let url = this.API.URL;
         url += this.API.SEARCH + 'query=' + type + '=' + query;
         request.get(url, (err, req, body) => {
             if (err) throw err;
