@@ -8,7 +8,7 @@ class ChorusAPI {
         this.random = 'api/random';
     }
 
-    search(type, query, resultCount) {
+    search(type, query, resultCount = 1) {
         let results = {};
         let url = this.URL;
         url += this.search + 'query=' + type + '=' + query;
