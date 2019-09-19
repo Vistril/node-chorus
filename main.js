@@ -2,7 +2,6 @@ const request = require('request');
 
 class ChorusAPI {
     constructor() {
-        this.URL = 'http://chorus.fightthe.pw/';
         this.API =  {
             URL: 'http://chorus.fightthe.pw',
             SEARCH: 'api/search?',
