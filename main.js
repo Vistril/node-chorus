@@ -20,5 +20,8 @@ class ChorusAPI {
           }
         });
 
+        return results;
     }
 }
+
+module.exports = ChorusAPI;
