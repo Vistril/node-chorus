@@ -13,11 +13,12 @@ class ChorusAPI {
         let url = this.URL;
         url += this.search + 'query=' + type + '=' + query;
         request.get(url, (err, req, body) => {
-          for (let i = 0; i < resultCount; i++) {
-              results[resultCount] = {
-                  songName: body.songs[resultCount].name
-              }
-          }
+            if (err) throw err;
+            for (let i = 0; i < resultCount; i++) {
+                results[resultCount] = {
+                    songName: body.songs[resultCount].name
+                }
+            }
         });
 
         return results;
