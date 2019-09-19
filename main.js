@@ -8,7 +8,7 @@ class ChorusAPI {
         this.random = 'api/random';
     }
 
-    search(type, query, resultCount = 1) {
+    search(type, query, resultCount) {
         if (isNaN(resultCount)) throw new Error('You must input your resultCount as an integer');
         let results = {};
         let url = this.URL;
