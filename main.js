@@ -29,13 +29,14 @@ class ChorusAPI {
       return rep;
     }
     //if (isNaN(resultCount)) throw new Error('You must input your resultCount as an integer');
-    let results = {};
-    let url = this.API.URL;
-    url += this.API.SEARCH + 'query=' + type + '=' + query;
+    let results = [];
+    //let url = this.API.URL;
+    let url = 'http://chorus.fightthe.pw/api/search?query=' + type + '=' + query
     request.get(url, (err, req, body) => {
       let data = JSON.parse(body);
       if (err) throw err;
-      for (let i = 0; i < 5; i++) {
+      let i = 0;
+      //for (let i = 0; i < 5; i++) {
         results[i] = {
           songName: data.songs[i].name,
           songArtist: data.songs[i].artist,
@@ -46,7 +47,7 @@ class ChorusAPI {
             effectiveLength: colon(data.songs[i].effectiveLength)
           }
         }
-      }
+      //}
     });
 
     return results;
